@@ -58,7 +58,7 @@ export const ProductDetails = () => {
         </div>
         <div className='my-5'>
           {isProductInCart && (
-            <ProductInCart 
+            <ProductInCart
               quantity={quantity}
               removeToCart={() => removeToCart(product)}
               addToCart={() => addToCart(product)}
@@ -78,10 +78,12 @@ export const ProductDetails = () => {
             }
           </button>
         </div>
-        <Button
-          route='/products'
-          text='Productos'
-        />
+        <div className="flex justify-center">
+          <Button
+            route='/productos'
+            text='Productos'
+          />
+        </div>
       </div>
     </>
   )
