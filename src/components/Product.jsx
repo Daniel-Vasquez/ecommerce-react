@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useCart } from '@/hooks/useCart.js'
 import { formatCurrency } from '@/utils/index.js'
 import { AddToCartIcon, RemoveFromCartIcon } from '@/components/Icons.jsx'
+import { ProductInCart } from '@/components/ProductInCart.jsx'
 
 export const Product = ({ products, checkProductInCart, removeFromCart, addToCart, removeToCart }) => {
   const { cart } = useCart()
@@ -13,23 +14,19 @@ export const Product = ({ products, checkProductInCart, removeFromCart, addToCar
       const { quantity } = cart.find((product) => product.id === id) || 0
 
       return (
-        <li key={id} className="bg-blue-light flex flex-col gap-4 items-center p-3 rounded-md relative">
-          <Link to={`/product/${id}`}>
+        <li key={id} className="bg-blue-light flex flex-col justify-between gap-4 items-center p-3 rounded-md relative">
+          <Link className="flex flex-col gap-2" to={`/product/${id}`}>
             <img
               className="aspect-square h-64"
               src={image}
               alt={title}
             />
-          </Link>
-          <Link
-            className="text-golden font-bold hover:text-blue-500"
-            to={`/product/${id}`}
-            key={id}
-          >
-            <h1 className="">
+
+            <h1 className="text-golden font-bold hover:text-blue-500">
               {title}
             </h1>
           </Link>
+
           <p className="absolute flex items-center justify-center top-4 left-2  bg-green-500 p-2 rounded-md text-white font-bold">
             {formatCurrency(price)}
           </p>
@@ -37,25 +34,11 @@ export const Product = ({ products, checkProductInCart, removeFromCart, addToCar
           <div>
             {
               isProductInCart && (
-                <div className="flex flex-col gap-2 mb-3">
-                  <small className="text-lg">
-                    Qty: {quantity}
-                  </small>
-                  <div>
-                    <button
-                      disabled={quantity <= 1}
-                      onClick={() => removeToCart(product)}
-                    >
-                      -
-                    </button>
-                    <button
-                      disabled={quantity >= product.stock}
-                      onClick={() => addToCart(product)}
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
+                <ProductInCart
+                  quantity={quantity}
+                  removeToCart={() => removeToCart(product)}
+                  addToCart={() => addToCart(product)}
+                />
               )
             }
             <button
