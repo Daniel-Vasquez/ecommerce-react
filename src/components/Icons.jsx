@@ -42,7 +42,7 @@ export function CartIcon ({totalProductsAdded}) {
   return (
     <>
       <div
-        className="absolute -left-3 -top-1 bg-red-500 rounded-full w-6 h-6 font-semibold"
+        className="absolute flex justify-center items-center -left-3 -top-1 bg-red-500 rounded-full w-6 h-6 font-semibold"
       >
         {totalProductsAdded.length}
       </div>

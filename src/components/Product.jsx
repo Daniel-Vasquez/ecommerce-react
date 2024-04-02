@@ -31,7 +31,7 @@ export const Product = ({ products, checkProductInCart, removeFromCart, addToCar
             {formatCurrency(price)}
           </p>
 
-          <div>
+          <div className="flex flex-col items-center">
             {
               isProductInCart && (
                 <ProductInCart

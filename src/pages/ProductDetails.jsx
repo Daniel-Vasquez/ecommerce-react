@@ -40,23 +40,25 @@ export const ProductDetails = () => {
   return (
     <>
       <Cart />
-      <div className="container px-4 my-4">
+      <div className="container max-w-7xl m-auto px-4 my-4 h-screen">
         <div className="flex justify-center h-72 aspect-square m-auto">
           <img className="h-full rounded-lg" src={image} alt={title} />
         </div>
-        <h1 className="text-golden text-3xl font-bold text-center mt-4 mb-2 ">
-          {title}
-        </h1>
-        <p className="text-2xl rounded-md text-white font-bold">
-          {formatCurrency(price)}
-        </p>
-        <p className="max-w-2xl m-auto text-justify">
-          {description}
-        </p>
-        <div className='product-details__rating'>
-          {rating?.rate}
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="text-golden text-3xl font-bold text-center mt-4 mb-2 ">
+            {title}
+          </h1>
+          <p className="text-2xl rounded-md text-white font-bold">
+            {formatCurrency(price)}
+          </p>
+          <p className="max-w-2xl text-white m-auto text-justify">
+            {description}
+          </p>
+          <div className="text-white">
+            {rating?.rate}
+          </div>
         </div>
-        <div className='my-5'>
+        <div className="text-center my-5">
           {isProductInCart && (
             <ProductInCart
               quantity={quantity}

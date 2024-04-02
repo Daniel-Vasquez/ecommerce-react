@@ -11,19 +11,21 @@ export const Checkout = () => {
 
   if (cart.length === 0) {
     return (
-      <>
-        <h1>No products added</h1>
-        <Button
-          route='/'
-          text='Go back'
-        />
-      </>
+      <div className="flex flex-col justify-center items-center h-screen">
+        <h1 className="text-white text-3xl font-semibold text-center">No hay productos añadidos</h1>
+        <div className="flex justify-center my-11">
+          <Button
+            route='/productos'
+            text='Productos'
+          />
+        </div>
+      </div>
     )
   }
 
   return (
-    <div className="container m-auto my-3">
-      <h1 className="text-2xl font-extrabold text-center">Productos añadidos</h1>
+    <div className="container m-auto my-3 px-3">
+      <h1 className="text-2xl text-white font-extrabold text-center">Productos añadidos</h1>
       <div className="">
         <ul className="flex flex-col gap-5">
           {cart.map(product => (
@@ -37,7 +39,7 @@ export const Checkout = () => {
           ))}
         </ul>
       </div>
-      <div>
+      <div className="text-white text-center">
         <p>Total de productos añadidos: { totalItemsCart }</p>
         <p>Total: {formatCurrency(totalPrice)}</p>
       </div>

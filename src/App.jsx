@@ -11,7 +11,7 @@ function App() {
     <CartProvider>
       <Router>
         <Header>
-          <div className="app">
+          <div className="app px-3">
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/productos' element={<CartPage />} />

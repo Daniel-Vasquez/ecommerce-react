@@ -10,7 +10,7 @@ export function Products({ products,  isLoading}) {
   }
 
   return (
-    <main className="container m-auto my-7">
+    <main className="container max-w-7xl m-auto my-7 min-h-96">
       {isLoading
         ? (<LoadingScreen />)
         : (

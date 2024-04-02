@@ -19,7 +19,7 @@ export function Cart() {
       <input id={cartCheckboxId} type='checkbox' hidden />
 
       <aside className="cart py-3">
-        <h1 className="text-2xl font-extrabold text-center">Carrito</h1>
+        <h1 className="text-2xl text-white font-extrabold text-center">Carrito</h1>
         <ul>
           {cart.map(product => (
             <CartItem
@@ -34,15 +34,17 @@ export function Cart() {
 
         {totalPrice > 0 && (
           <>
-            <section>
+            <section className="text-white text-center">
               <p>Total de productos agregados: { totalItemsCart }</p>
               <p>Total: ${totalPrice.toLocaleString()}</p>
             </section>
 
-            <button onClick={clearCart}>
-              <ClearCartIcon />
-            </button>
-            <div className="my-9">
+            <div className="flex justify-center text-red-500 my-2">
+              <button onClick={clearCart} title="Remover todos los productos">
+                <ClearCartIcon />
+              </button>
+            </div>
+            <div className="flex justify-center my-9">
               <Button
                 route='/checkout'
                 text='Pagar'
