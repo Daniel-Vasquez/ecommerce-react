@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom'
-import { Cart } from '@/components/Cart'
-import { RickLogo } from '@/components/Icons/RickLogo'
 import bannerRickAndMorty from '@/assets/rickAndMorty.jpeg'
 import rick1 from '@/assets/rick1.jpeg'
 import rick2 from '@/assets/rick2.jpeg'

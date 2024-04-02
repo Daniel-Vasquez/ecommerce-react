@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "../constants/routes.ts";
 import { RickAndMorty } from "@/components/Icons/RickAndMorty.jsx";
 import { logout } from '@/redux/authSlice';
-import { Cart } from '@/components/Cart.jsx';
 
 export const Navbar = () => {
   const dispatch = useDispatch();
@@ -36,10 +35,8 @@ export const Navbar = () => {
                 {route.label}
               </Link>
             ))}
-            <Cart />
           </nav>
 
-          
           <button onClick={handleLogout}>
             Cerrar sesión
           </button>
