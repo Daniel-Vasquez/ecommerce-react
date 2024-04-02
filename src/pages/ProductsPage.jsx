@@ -1,13 +1,8 @@
-import { Link, useLocation } from 'react-router-dom'
-import { useState, useEffect, useMemo } from 'react'
+import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import { Products } from '@/components/Products.jsx'
 import { Cart } from '@/components/Cart.jsx'
-
-function useQuery() {
-  const { search } = useLocation();
-
-  return useMemo(() => new URLSearchParams(search), [search]);
-}
+import { useQuery } from '@/hooks/useQuery.js'
 
 export function CartPage() {
   const params = useQuery();
