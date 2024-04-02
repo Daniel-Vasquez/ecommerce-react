@@ -23,7 +23,7 @@ export const Checkout = () => {
   }
 
   return (
-    <div className="container m-auto my-4 px-3 md:h-screen">
+    <div className="container max-w-7xl m-auto my-4 px-3 md:h-screen">
       <h1 className="text-2xl text-golden font-extrabold text-center my-4">Productos añadidos</h1>
       <div className="">
         <ul className="flex flex-col gap-5">
