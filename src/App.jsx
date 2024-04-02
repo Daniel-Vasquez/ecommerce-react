@@ -7,9 +7,11 @@ import { ProductDetails } from '@/pages/ProductDetails.jsx'
 import { Home } from '@/pages/Home.jsx';
 import { Header } from '@/components/Header.jsx';
 import { Login } from '@/pages/Login';
+import { NotFound } from './pages/NotFound';
 
 function App() {
   const tokenAcess = useSelector(state => state.token)
+  const AuthPageLogin = tokenAcess ? <Navigate replace to={"/home"} /> : <Login />;
   const AuthPageHome = tokenAcess ? <Home /> : <Navigate replace to={"/"} />;
   const AuthPageProducts = tokenAcess ? <CartPage /> : <Navigate replace to={"/"} />;
   const AuthPageDetailsProduct = tokenAcess ? <ProductDetails /> : <Navigate replace to={"/"} />;
@@ -21,7 +23,10 @@ function App() {
         <Header>
           <div className="app">
             <Routes>
-              <Route path='/' element={<Login />} />
+              <Route
+                path='/'
+                element={AuthPageLogin}
+              />
               <Route
                 exact
                 path='/home'
@@ -41,6 +46,10 @@ function App() {
                 exact
                 path='/carrito'
                 element={AuthPageCheckout}
+              />
+              <Route
+                path='*'
+                element={<NotFound />}
               />
             </Routes>
           </div>

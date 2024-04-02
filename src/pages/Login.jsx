@@ -4,8 +4,6 @@ import { useNavigate, Link } from 'react-router-dom';
 import { LoginForm } from '@/components/LoginForm';
 import { RickLogo } from '@/components/Icons/RickLogo';
 import { login, error, loading } from '@/redux/authSlice'
-import { post } from '@/API/requets';
-const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const LAYOUTSTYLE = {
   margin: '0 auto',
