@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer"
 
 export function Header({ children }) {
   return (
-    <header>
+    <header className="px-3">
       <Navbar />
       {children}
       <Footer />

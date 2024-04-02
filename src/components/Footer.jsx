@@ -3,7 +3,7 @@ export function Footer() {
   return (
     <footer className="container max-w-7xl m-auto py-3 bg-blue-light">
       <h2 className="text-lg text-white text-center">
-        <h2>
+        <div>
           Creado por {" "}
           <Link
             className="text-golden font-bold hover:underline"
@@ -12,7 +12,7 @@ export function Footer() {
           >
             Daniel Vasquez
           </Link>
-        </h2>
+        </div>
       </h2>
     </footer>
   )

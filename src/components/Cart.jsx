@@ -4,6 +4,7 @@ import { useCart } from '../hooks/useCart.js'
 import { CartItem } from './CartItem.jsx';
 import { calculateCartTotals } from '../utils/index.js';
 import { Button } from './Button.jsx';
+import { formatCurrency } from '@/utils/index.js'
 import './Cart.css'
 
 export function Cart() {
@@ -36,7 +37,7 @@ export function Cart() {
           <>
             <section className="text-white text-center">
               <p>Total de productos agregados: { totalItemsCart }</p>
-              <p>Total: ${totalPrice.toLocaleString()}</p>
+              <p>Total: {formatCurrency(totalPrice)}</p>
             </section>
 
             <div className="flex justify-center text-red-500 my-2">

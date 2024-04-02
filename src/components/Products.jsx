@@ -2,7 +2,7 @@ import { useCart } from '@/hooks/useCart.js'
 import { Product } from '@/components/Product.jsx'
 import { LoadingScreen } from '@/components/LoadingScreen.jsx'
 
-export function Products({ products,  isLoading}) {
+export function Products({ products, isLoading }) {
   const { addToCart, removeToCart, removeFromCart, cart } = useCart()
 
   const checkProductInCart = product => {
