@@ -1,11 +1,9 @@
 
-// const getEnvValue = require('@/utils/getEnvValue')
 const defaultHeaders = {
   'X-Requested-With': 'XMLHttpRequest',
   'Content-Type': 'application/json',
 };
 
-// Main request function
 function request(config = {}) {
   const { method = 'GET', path, paramsOrData = {}, config: options = {} } = config;
 
@@ -40,7 +38,6 @@ function request(config = {}) {
     }));
 }
 
-// Helper functions for GET and POST requests
 function get(url, params = {}, config = {}) {
   console.log('GET: ', url, params)
   

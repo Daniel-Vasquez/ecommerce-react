@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import { LoginForm } from '@/components/LoginForm';
 import { RickLogo } from '@/components/Icons/RickLogo';
-// import { Logo } from '@/components/Logo';
 import { login, error, loading } from '@/redux/authSlice'
 import { post } from '@/API/requets';
 const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -28,29 +27,6 @@ export const Login = () => {
   const loadingLogin = useSelector(state => state.loading)
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const handleLogin = (values) => {
-    dispatch(error(null));
-    const { email, password } = values;
-
-    post(`${VITE_API_BASE_URL}/v1/auth/login`, { email, password })
-      .then((response) => {
-        if (response.success) {
-          const token = response.body.tokens.access.token;
-
-          const user = {
-            email: response.body.user.email,
-            name: response.body.user.name,
-          };
-
-          dispatch(error(null));
-          dispatch(login({ token, user }));
-          navigate('/home');
-        } else {
-          dispatch(error(true));
-        }
-      });
-  };
 
   const handleLoginFake = (values) => {
     dispatch(error(null));

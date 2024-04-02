@@ -1,5 +1,5 @@
-import { RemoveFromCartIcon } from '@/components/Icons'
-import { ProductInCart } from './ProductInCart'
+import { ProductInCart } from '@/components/ProductInCart'
+import { formatCurrency } from '@/utils'
 
 export const CartItem = ({ name, image, status, quantity, addToCart, removeToCart, removeFromCart }) => {
 
@@ -15,8 +15,8 @@ export const CartItem = ({ name, image, status, quantity, addToCart, removeToCar
           <strong>{name}</strong>
         </h1>
 
-        <p className="text-black">
-          ${name.length * status.length}
+        <p className="text-black font-semibold">
+          {formatCurrency(name.length * status.length)}
         </p>
 
         <ProductInCart
@@ -31,8 +31,8 @@ export const CartItem = ({ name, image, status, quantity, addToCart, removeToCar
         />
 
         <section>
-          <button className="text-red-600 font-bold" onClick={removeFromCart}>
-            Eliminar
+          <button className="text-red-600 font-bold hover:underline" onClick={removeFromCart}>
+            Eliminar producto
           </button>
         </section>
       </div>

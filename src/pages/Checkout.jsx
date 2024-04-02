@@ -2,7 +2,6 @@ import { useCart } from '@/hooks/useCart.js'
 import { CartItem } from '@/components/CartItem.jsx';
 import { calculateCartTotals } from '@/utils/index.js';
 import { Button } from '@/components/Button.jsx';
-import { RemoveFromCartIcon } from '@/components/Icons'
 import { formatCurrency } from '@/utils/index.js'
 
 export const Checkout = () => {
@@ -43,9 +42,9 @@ export const Checkout = () => {
         <p className="text-lg">Total de productos añadidos: { totalItemsCart }</p>
         <p className="text-xl font-bold">Total: {formatCurrency(totalPrice)}</p>
       </div>
-      <div className="flex justify-center items-center gap-3 my-3">
+      <div className="flex flex-col justify-center items-center gap-3 my-3">
         <button
-          className="text-xl text-red-600 font-bold"
+          className="text-xl text-red-600 font-bold hover:underline"
           onClick={clearCart}
         >
           Vaciar carrito

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useCart } from '@/hooks/useCart.js'
 import { formatCurrency } from '@/utils/index.js'
-import { AddToCartIcon, RemoveFromCartIcon } from '@/components/Icons.jsx'
 import { ProductInCart } from '@/components/ProductInCart.jsx'
 
 export const Product = ({ products, checkProductInCart, removeFromCart, addToCart, removeToCart }) => {
@@ -31,7 +30,7 @@ export const Product = ({ products, checkProductInCart, removeFromCart, addToCar
             </Link>
 
             <p className="">
-              {formatCurrency(name.length * status.length)}
+              {formatCurrency(name.length * status.length) || 0}
             </p>
 
             <div className="flex justify-center items-center gap-3">
@@ -45,7 +44,7 @@ export const Product = ({ products, checkProductInCart, removeFromCart, addToCar
                 )
               }
               <button
-                className="font-bold"
+                className="font-bold hover:underline"
                 style={{ color: isProductInCart ? 'red' : '#fbbf24' }}
                 onClick={() => {
                   isProductInCart
