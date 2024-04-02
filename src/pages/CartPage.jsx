@@ -4,7 +4,7 @@ import { calculateCartTotals } from '@/utils/index.js';
 import { Button } from '@/components/Button.jsx';
 import { formatCurrency } from '@/utils/index.js'
 
-export const Checkout = () => {
+export const CartPage = () => {
   const { cart, clearCart, addToCart, removeToCart, removeFromCart } = useCart()
   const { totalItemsCart, totalPrice } = calculateCartTotals(cart);
 

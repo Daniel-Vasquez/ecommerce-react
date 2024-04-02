@@ -6,7 +6,7 @@ import { useQuery } from '@/hooks/useQuery.js'
 import { useScrollToTop } from '@/utils'
 import { loading, error } from '@/redux/authSlice'
 
-export function CartPage() {
+export function ProductsPage() {
   const dispatch = useDispatch();
   const params = useQuery();
   const loadingLogin = useSelector(state => state.loading)

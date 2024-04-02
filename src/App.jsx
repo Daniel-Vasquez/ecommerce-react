@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { CartProvider } from '@/context/cart.jsx'
-import { CartPage } from '@/pages/ProductsPage.jsx'
-import { Checkout } from '@/pages/Checkout.jsx'
+import { ProductsPage } from '@/pages/ProductsPage.jsx'
+import { CartPage } from '@/pages/CartPage.jsx'
 import { ProductDetails } from '@/pages/ProductDetails.jsx'
 import { Home } from '@/pages/Home.jsx';
 import { Header } from '@/components/Header.jsx';
@@ -13,9 +13,9 @@ function App() {
   const tokenAcess = useSelector(state => state.token)
   const AuthPageLogin = tokenAcess ? <Navigate replace to={"/home"} /> : <Login />;
   const AuthPageHome = tokenAcess ? <Home /> : <Navigate replace to={"/"} />;
-  const AuthPageProducts = tokenAcess ? <CartPage /> : <Navigate replace to={"/"} />;
+  const AuthPageProducts = tokenAcess ? <ProductsPage /> : <Navigate replace to={"/"} />;
   const AuthPageDetailsProduct = tokenAcess ? <ProductDetails /> : <Navigate replace to={"/"} />;
-  const AuthPageCheckout = tokenAcess ? <Checkout /> : <Navigate replace to={"/"} />;
+  const AuthPageCheckout = tokenAcess ? <CartPage /> : <Navigate replace to={"/"} />;
 
   return (
     <CartProvider>
