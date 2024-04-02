@@ -2,15 +2,15 @@ import { RouteType } from "@/types/routes";
 
 export const ROUTES: RouteType[] = [
   {
-    href: "/",
-    label: "Inicio",
+    href: "/home",
+    label: "Home",
   },
   {
     href: "/productos",
     label: "Productos",
   },
   {
-    href: "/checkout",
-    label: "Checkout",
+    href: "/carrito",
+    label: "Mi carrito",
   },
 ];
