@@ -4,7 +4,7 @@ import { RickAndMorty } from "@/components/Icons/RickAndMorty.jsx";
 
 export const Navbar = () => {
   return (
-    <div className="container m-auto bg-blue-light max-w-7xl flex items-center justify-between mx-auto overflow-visible py-3 px-4 rounded-2xl rounded-t-none">
+    <div className="container m-auto bg-white max-w-7xl flex items-center justify-between mx-auto overflow-visible py-3 px-4 rounded-2xl rounded-t-none">
       <Link
         to="https://rickandmortyapi.com/documentation"
         target="_blank"
@@ -17,7 +17,7 @@ export const Navbar = () => {
         <Link
           key={route.href}
           to={route.href}
-          className="text-white transition-colors duration-300 border-golden border-l-4 pl-2 hover:text-golden"
+          className="text-black transition-colors duration-300 border-golden border-l-4 pl-2 hover:text-golden"
         >
           {route.label}
         </Link>

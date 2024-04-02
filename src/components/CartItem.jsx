@@ -10,12 +10,12 @@ export const CartItem = ({ name, image, status, quantity, addToCart, removeToCar
         alt={name}
         className="m-auto h-56 aspect-square"
       />
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 justify-items-center items-center gap-4 w-full">
-        <h1 className="text-white text-center">
+      <div className="flex flex-col justify-center items-center m-auto">
+        <h1 className="text-golden text-center">
           <strong>{name}</strong>
         </h1>
 
-        <p className="text-white">
+        <p className="text-black">
           ${name.length * status.length}
         </p>
 
@@ -31,8 +31,8 @@ export const CartItem = ({ name, image, status, quantity, addToCart, removeToCar
         />
 
         <section>
-          <button style={{ backgroundColor: 'red' }} onClick={removeFromCart}>
-            <RemoveFromCartIcon />
+          <button className="text-red-600 font-bold" onClick={removeFromCart}>
+            Eliminar
           </button>
         </section>
       </div>

@@ -14,46 +14,52 @@ export const Product = ({ products, checkProductInCart, removeFromCart, addToCar
       const { quantity } = cart.find((product) => product.id === id) || 0
 
       return (
-        <li key={id} className="bg-blue-light flex flex-col justify-between gap-4 items-center p-3 rounded-md relative">
+        <li key={id} className=" bg-gray-100 rounded-md">
           <Link className="flex flex-col gap-2" to={`/productos/${id}`}>
             <img
-              className="aspect-square h-64"
+              className="aspect-square h-96 rounded-md"
               src={image}
               alt={name}
             />
-
-            <h1 className="text-golden text-center font-bold hover:text-blue-500">
-              {name}
-            </h1>
           </Link>
 
-          <p className="absolute flex items-center justify-center top-4 left-2  bg-green-500 p-2 rounded-md text-white font-bold">
-            {formatCurrency(name.length * status.length)}
-          </p>
+          <div className="p-3">
+            <Link className="flex flex-col gap-2" to={`/productos/${id}`}>
+              <h1 className="text-golden font-bold hover:text-blue-500">
+                {name}
+              </h1>
+            </Link>
 
-          <div className="flex flex-col items-center">
-            {
-              isProductInCart && (
-                <ProductInCart
-                  quantity={quantity}
-                  removeToCart={() => removeToCart(product)}
-                  addToCart={() => addToCart(product)}
-                />
-              )
-            }
-            <button
-              style={{ backgroundColor: isProductInCart ? 'red' : '#09f' }} onClick={() => {
-                isProductInCart
-                  ? removeFromCart(product)
-                  : addToCart(product)
-              }}
-            >
+            <p className="">
+              {formatCurrency(name.length * status.length)}
+            </p>
+
+            <div className="flex justify-center items-center gap-3">
               {
-                isProductInCart
-                  ? <RemoveFromCartIcon />
-                  : <AddToCartIcon />
+                isProductInCart && (
+                  <ProductInCart
+                    quantity={quantity}
+                    removeToCart={() => removeToCart(product)}
+                    addToCart={() => addToCart(product)}
+                  />
+                )
               }
-            </button>
+              <button
+                className="font-bold"
+                style={{ color: isProductInCart ? 'red' : '#fbbf24' }}
+                onClick={() => {
+                  isProductInCart
+                    ? removeFromCart(product)
+                    : addToCart(product)
+                }}
+              >
+                {
+                  isProductInCart
+                    ? "Eliminar"
+                    : "Añadir al carrito"
+                }
+              </button>
+            </div>
           </div>
         </li>
       )

@@ -19,7 +19,7 @@ export function Cart() {
       </label>
       <input id={cartCheckboxId} type='checkbox' hidden />
 
-      <aside className="cart py-3">
+      <aside className="bg-blue-light cart py-3">
         <h1 className="text-2xl text-white font-extrabold text-center">Carrito</h1>
         <ul>
           {cart.map(product => (
