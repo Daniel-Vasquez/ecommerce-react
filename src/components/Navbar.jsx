@@ -45,7 +45,7 @@ export const Navbar = () => {
         </button>
       )}
 
-      <div class="block md:hidden">
+      <div className="block md:hidden">
         <DropdownMenu />
       </div>
     </div>
