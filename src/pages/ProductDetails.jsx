@@ -46,7 +46,7 @@ export const ProductDetails = () => {
   useScrollToTop()
 
   return (
-    <div className="container max-w-7xl m-auto px-4 my-4 h-screen">
+    <div className="container max-w-7xl m-auto my-4 h-screen">
       {loadingLogin
         ? (<LoadingScreen />)
         : (
