@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
-import { Button } from '@/components/Button.jsx'
 import { useCart } from '@/hooks/useCart.js'
 import { useDispatch, useSelector } from 'react-redux';
 import { loading, error } from '@/redux/authSlice'
@@ -48,17 +47,10 @@ export const ProductDetails = () => {
 
   return (
     <div className="container max-w-7xl m-auto px-4 my-4 h-screen">
-      <div className="flex justify-center mb-4">
-        <Button
-          route='/productos'
-          text='Productos'
-        />
-      </div>
       {loadingLogin
         ? (<LoadingScreen />)
         : (
-          <div className="flex flex-col md:flex-row">
-
+          <div className="flex flex-col gap-7 md:flex-row">
             <div className="flex justify-center h-96 aspect-square">
               <img className="h-full rounded-lg" src={image} alt={name} />
             </div>

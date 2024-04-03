@@ -8,10 +8,10 @@ export const CartItem = ({ name, image, status, quantity, addToCart, removeToCar
       <img
         src={image}
         alt={name}
-        className="m-auto h-56 aspect-square"
+        className="h-96 m-auto aspect-square lg:m-0"
       />
-      <div className="flex flex-col justify-center items-center m-auto">
-        <h1 className="text-golden text-center">
+      <div className="flex m-auto gap-7 flex-wrap items-center justify-center">
+        <h1 className="text-golden text-xl text-center">
           <strong>{name}</strong>
         </h1>
 

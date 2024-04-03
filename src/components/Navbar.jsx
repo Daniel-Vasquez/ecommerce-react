@@ -45,7 +45,10 @@ export const Navbar = () => {
       </nav>
 
       {tokenAcess && (
-        <button onClick={handleLogout}>
+        <button
+          className="text-black font-bold hover:text-red-600 hover:underline"
+          onClick={handleLogout}
+        >
           Cerrar sesión
         </button>
       )}

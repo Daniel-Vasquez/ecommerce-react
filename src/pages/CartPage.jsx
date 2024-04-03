@@ -24,38 +24,43 @@ export const CartPage = () => {
   }
 
   return (
-    <div className="container max-w-7xl m-auto my-4 px-3 md:h-screen">
-      <h1 className="text-2xl text-golden font-extrabold text-center my-4">Productos añadidos</h1>
-      <div className="">
-        <ul className="flex flex-col gap-5">
-          {cart.map(product => (
-            <CartItem
-              key={product.id}
-              addToCart={() => addToCart(product)}
-              removeToCart={() => removeToCart(product)}
-              removeFromCart={() => removeFromCart(product)}
-              {...product}
-            />
-          ))}
-        </ul>
-      </div>
-      <div className="text-black text-center">
-        <p className="text-lg">Total de productos añadidos: { totalItemsCart }</p>
-        <p className="text-xl font-bold">Total: {formatCurrency(totalPrice)}</p>
-      </div>
-      <div className="flex flex-col justify-center items-center gap-3 my-3">
-        <button
-          className="text-xl text-red-600 font-bold hover:underline"
-          onClick={clearCart}
-        >
-          Vaciar carrito
-        </button>
-        <Link
-          to="/checkout"
-          className="text-xl text-green-600 font-bold hover:underline"
-        >
-          Pagar
-        </Link>
+    <div className="container flex flex-col max-w-7xl m-auto my-4 px-3">
+      <div className="flex-1 min-h-screen">
+        <h1 className="text-2xl text-golden font-extrabold text-center my-4">Productos añadidos: {totalItemsCart}</h1>
+        <div className="">
+          <ul className="flex flex-col gap-5">
+            {cart.map(product => (
+              <CartItem
+                key={product.id}
+                addToCart={() => addToCart(product)}
+                removeToCart={() => removeToCart(product)}
+                removeFromCart={() => removeFromCart(product)}
+                {...product}
+              />
+            ))}
+          </ul>
+        </div>
+        <div className="text-black text-center">
+          <p className="text-xl font-bold">Total a pagar: {""}
+            <span className="font-bold text-golden">
+              {formatCurrency(totalPrice)}
+            </span>
+          </p>
+        </div>
+        <div className="flex flex-col justify-center items-center gap-3 my-3">
+          <button
+            className="text-xl text-red-600 font-bold hover:underline"
+            onClick={clearCart}
+          >
+            Vaciar carrito
+          </button>
+          <Link
+            to="/checkout"
+            className="text-xl text-green-600 font-bold hover:underline"
+          >
+            Pagar
+          </Link>
+        </div>
       </div>
     </div>
   )
