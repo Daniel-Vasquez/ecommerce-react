@@ -125,9 +125,11 @@ export const Checkout = () => {
         </Form.Item>
 
 
-        <Button type="primary" htmlType="submit">
-          Pagar
-        </Button>
+        <div className="text-center">
+          <Button type="primary" htmlType="submit">
+            Pagar
+          </Button>
+        </div>
       </Form>
     </section>
   )
