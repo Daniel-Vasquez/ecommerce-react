@@ -16,15 +16,15 @@ export const Home = () => {
           alt="Rick and Morty"
           className="w-full h-96 object-cover rounded-xl"
         />
-        <h1 className="absolute bottom-11 right-5 text-2xl text-golden font-black md:text-6xl">
+        <h1 className="absolute top-11 right-5 text-lg text-golden font-black md:text-6xl">
           Tarjetas de Rick and Morty
         </h1>
       </div>
 
-      <h2 className="text-3xl font-extrabold my-2">
-        Novedades.
+      <h2 className="text-3xl font-extrabold mt-7 mb-5">
+        Novedades
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+      <div className="flex justify-center gap-6 flex-wrap">
         <Link to="/productos">
           <img src={rick1} alt="Rick 1" className="w-full h-96 object-cover rounded-xl" />
         </Link>
@@ -38,11 +38,11 @@ export const Home = () => {
         </Link>
       </div>
 
-      <h3 className="text-3xl font-extrabold my-2">
-        Fant Art.
-      </h3>
+      <h2 className="text-3xl font-extrabold mt-7 mb-5">
+        Fant Art
+      </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+      <div className="flex justify-center gap-6 flex-wrap">
         <Link to="/productos">
           <img src={rick4} alt="Rick 1" className="w-full h-96 object-cover rounded-xl" />
         </Link>
