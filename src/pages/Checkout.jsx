@@ -124,11 +124,10 @@ export const Checkout = () => {
           <InputNumber addonBefore={prefixSelector} minLength={10} maxLength={10} style={{ width: '100%' }} />
         </Form.Item>
 
-        <Form.Item wrapperCol={{ offset: 6, span: 16 }}>
-          <Button type="primary" htmlType="submit">
-            Pagar
-          </Button>
-        </Form.Item>
+
+        <Button type="primary" htmlType="submit">
+          Pagar
+        </Button>
       </Form>
     </section>
   )
