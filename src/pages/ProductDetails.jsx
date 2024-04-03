@@ -51,8 +51,8 @@ export const ProductDetails = () => {
         ? (<LoadingScreen />)
         : (
           <div className="flex flex-col gap-7 md:flex-row">
-            <div className="flex justify-center h-96 aspect-square">
-              <img className="h-full rounded-lg" src={image} alt={name} />
+            <div className="flex justify-center m-auto w-72 h-96 aspect-square md:w-auto">
+              <img className="w-full h-full rounded-lg" src={image} alt={name} />
             </div>
             <div className="grid grid-rows-2 w-full">
               <div className="flex w-full flex-col md:flex-row gap-4 justify-between items-center px-3  border-orange-500">
