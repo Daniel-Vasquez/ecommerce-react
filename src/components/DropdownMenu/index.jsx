@@ -2,8 +2,9 @@ import { Menu, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import { IconMenu } from '@/components/Icons/LogoMenu/index.jsx'
 import { ROUTES } from "@/constants/routes";
+import { Badge } from '@/components/Icons/Badge';
 
-export function DropdownMenu() {
+export function DropdownMenu({ totalProducts }) {
   return (
     <div className="">
       <Menu as="div" className="relative inline-block text-left">
@@ -26,9 +27,10 @@ export function DropdownMenu() {
                 <Menu.Item key={index}>
                   <a
                     href={href}
-                    className="bg-blue-medium text-white rounded-md px-3 py-2 font-bold hover:bg-golden hover:text-black"
+                    className="relative bg-blue-medium text-white rounded-md px-3 py-2 font-bold hover:bg-golden hover:text-black"
                   >
                     {label}
+                    {label === 'Mi carrito' && totalProducts.length >= 1 && <Badge totalProducts={totalProducts} />}
                   </a>
                 </Menu.Item>
               ))}
