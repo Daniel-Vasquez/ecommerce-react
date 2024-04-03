@@ -8,7 +8,7 @@ import { thunk } from "redux-thunk";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["token", "user", "error", "loading"],
+  whitelist: ["token", "user", "error", "loading", "allCharacters"],
 };
 
 const persistedReducer = persistReducer(persistConfig, userReducer);

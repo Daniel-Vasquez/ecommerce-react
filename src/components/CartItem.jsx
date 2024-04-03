@@ -8,7 +8,7 @@ export const CartItem = ({ name, image, status, quantity, addToCart, removeToCar
       <img
         src={image}
         alt={name}
-        className="h-96 m-auto aspect-square lg:m-0"
+        className="h-96 m-auto aspect-square rounded-md lg:m-0"
       />
       <div className="flex m-auto gap-7 flex-wrap items-center justify-center">
         <h1 className="text-golden text-xl text-center">

@@ -1,42 +1,22 @@
-import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { useCart } from '@/hooks/useCart.js'
-import { useDispatch, useSelector } from 'react-redux';
-import { loading, error } from '@/redux/authSlice'
+import { useSelector } from 'react-redux';
 import { ProductInCart } from '@/components/ProductInCart.jsx'
 import { LoadingScreen } from '@/components/LoadingScreen';
 import { formatCurrency, useScrollToTop } from '@/utils'
 
 export const ProductDetails = () => {
-  const dispatch = useDispatch();
+  const characters = useSelector(state => state.allCharacters)
   const { idProduct } = useParams()
   const { addToCart, removeToCart, removeFromCart, cart } = useCart()
   const loadingLogin = useSelector(state => state.loading)
-  const [product, setProduct] = useState({})
+  const product = characters.find((product) => product.id === parseInt(idProduct))
 
   const checkProductInCart = product => {
     return cart.some(item => item.id === product.id)
   }
 
   const isProductInCart = checkProductInCart(product)
-
-  useEffect(() => {
-    const getProducts = async () => {
-      dispatch(loading(true));
-      fetch(`https://rickandmortyapi.com/api/character/${idProduct}`)
-        .then((response) => response.json())
-        .then((data) => {
-          setProduct(data)
-          dispatch(loading(false));
-        })
-        .catch(() => {
-          dispatch(loading(false));
-          dispatch(error(true));
-        })
-    };
-
-    getProducts();
-  }, []);
 
   const { quantity } = cart.find((product) => product.id === parseInt(idProduct)) || { quantity: 0 }
 

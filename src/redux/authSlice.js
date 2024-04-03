@@ -8,6 +8,7 @@ const initialState = {
   },
   error: null,
   loading: false,
+  allCharacters: [],
 };
 
 export const authSlice = createSlice({
@@ -29,8 +30,11 @@ export const authSlice = createSlice({
     loading: (state, action) => {
       state.loading = action.payload;
     },
+    getCharacters: (state, action) => {
+      state.allCharacters = action.payload;
+    },
   }
 });
 
-export const { login, logout, error, loading } = authSlice.actions;
+export const { login, logout, error, loading, getCharacters } = authSlice.actions;
 export default authSlice.reducer;

@@ -4,25 +4,25 @@ import { useState, useEffect } from 'react'
 import { Products } from '@/components/Products.jsx'
 import { useQuery } from '@/hooks/useQuery.js'
 import { useScrollToTop } from '@/utils'
-import { loading, error } from '@/redux/authSlice'
+import { loading, error, getCharacters } from '@/redux/authSlice'
 
 export function ProductsPage() {
+  const characters = useSelector(state => state.allCharacters)
   const dispatch = useDispatch();
   const params = useQuery();
   const loadingLogin = useSelector(state => state.loading)
   const currentPage = parseInt(params.get("page")) || 1;
-  const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    fetchCharacters();
+    fetchCharacters(currentPage);
   }, [currentPage]);
 
-  const fetchCharacters = async () => {
+  const fetchCharacters = async (currentPage) => {
     dispatch(loading(true));
     fetch(`https://rickandmortyapi.com/api/character/?page=${currentPage}`)
       .then((response) => response.json())
-      .then((data) => {
-        setCharacters(data.results);
+      .then(({ results }) => {
+        dispatch(getCharacters(results));
         dispatch(loading(false));
       })
       .catch(() => {
