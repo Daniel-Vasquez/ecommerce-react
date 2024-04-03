@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useCart } from '@/hooks/useCart.js'
 import { ProductInCart } from '@/components/ProductInCart.jsx'
 import { LoadingScreen } from '@/components/LoadingScreen';
-import { formatCurrency, useScrollToTop } from '@/utils'
 import { loading, error, getCharacters } from '@/redux/authSlice'
+import { formatCurrency, useScrollToTop } from '@/utils'
+import { LogoDelete } from "@/components/Icons/LogoDelete";
 
 export const ProductDetails = () => {
   const dispatch = useDispatch();
@@ -87,7 +88,7 @@ export const ProductDetails = () => {
               }}
             >
               {isProductInCart
-                ? "Eliminar"
+                ? <LogoDelete className="w-9 text-red-400 rounded-full transition-all hover:text-red-600" />
                 : "Añadir al carrito"
               }
             </button>

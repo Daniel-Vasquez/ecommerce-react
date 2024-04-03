@@ -6,7 +6,7 @@ import { Button } from '@/components/Button.jsx';
 import { formatCurrency } from '@/utils/index.js'
 
 export const CartPage = () => {
-  const { cart, clearCart, addToCart, removeToCart, removeFromCart } = useCart()
+  const { cart, addToCart, removeToCart, removeFromCart } = useCart()
   const { totalItemsCart, totalPrice } = calculateCartTotals(cart);
 
   if (cart.length === 0) {
@@ -47,16 +47,10 @@ export const CartPage = () => {
             </span>
           </p>
         </div>
-        <div className="flex flex-col justify-center items-center gap-3 my-3">
-          <button
-            className="text-xl text-red-600 font-bold hover:underline"
-            onClick={clearCart}
-          >
-            Vaciar carrito
-          </button>
+        <div className="flex justify-end items-center gap-3 my-3">
           <Link
             to="/checkout"
-            className="text-xl text-green-600 font-bold hover:underline"
+            className="flex justify-center items-center text-xl bg-green-600 text-white w-44 h-12 rounded-md font-bold hover:bg-green-700"
           >
             Pagar
           </Link>

@@ -1,5 +1,6 @@
 import { ProductInCart } from '@/components/ProductInCart'
 import { formatCurrency } from '@/utils'
+import { LogoDelete } from '@/components/Icons/LogoDelete'
 
 export const CartItem = ({ name, image, status, quantity, addToCart, removeToCart, removeFromCart }) => {
 
@@ -10,7 +11,7 @@ export const CartItem = ({ name, image, status, quantity, addToCart, removeToCar
         alt={name}
         className="h-96 m-auto aspect-square rounded-md lg:m-0"
       />
-      <div className="flex m-auto gap-7 flex-wrap items-center justify-center">
+      <div className="flex m-auto gap-6 flex-wrap items-center justify-center">
         <h1 className="text-golden text-xl text-center">
           <strong>{name}</strong>
         </h1>
@@ -31,8 +32,8 @@ export const CartItem = ({ name, image, status, quantity, addToCart, removeToCar
         />
 
         <section>
-          <button className="text-red-600 font-bold hover:underline" onClick={removeFromCart}>
-            Eliminar producto
+          <button onClick={removeFromCart}>
+            <LogoDelete className="w-10 text-red-400 rounded-full transition-all hover:text-red-600" />
           </button>
         </section>
       </div>

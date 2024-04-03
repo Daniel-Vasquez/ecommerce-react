@@ -2,7 +2,7 @@ export const ProductInCart = ({ quantity, product, addToCart, removeToCart }) =>
   return (
     <section>
       <div className="relative flex gap-3 items-center">
-        <p>Qty:</p>
+        <p className="text-xl font-semibold" >Qty:</p>
         <button
           className="flex-shrink-0 bg-gray-100 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 focus:ring-2 focus:outline-none"
           type="button"
@@ -14,7 +14,7 @@ export const ProductInCart = ({ quantity, product, addToCart, removeToCart }) =>
             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h16" />
           </svg>
         </button>
-        <small className="flex-shrink-0 text-golden border-0 text-xl font-bold">
+        <small className="flex-shrink-0 text-golden border-0 text-2xl font-bold">
           {quantity}
         </small>
         <button
