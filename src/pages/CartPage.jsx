@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useCart } from '@/hooks/useCart.js'
 import { CartItem } from '@/components/CartItem.jsx';
 import { calculateCartTotals } from '@/utils/index.js';
@@ -49,10 +50,12 @@ export const CartPage = () => {
         >
           Vaciar carrito
         </button>
-        <Button
-          route='/productos'
-          text='Productos'
-        />
+        <Link
+          to="/checkout"
+          className="text-xl text-green-600 font-bold hover:underline"
+        >
+          Pagar
+        </Link>
       </div>
     </div>
   )

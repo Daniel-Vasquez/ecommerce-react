@@ -8,6 +8,7 @@ import { Home } from '@/pages/Home.jsx';
 import { Header } from '@/components/Header.jsx';
 import { Login } from '@/pages/Login';
 import { NotFound } from './pages/NotFound';
+import { Checkout } from '@/pages/Checkout';
 
 function App() {
   const tokenAcess = useSelector(state => state.token)
@@ -46,6 +47,11 @@ function App() {
                 exact
                 path='/carrito'
                 element={AuthPageCheckout}
+              />
+              <Route
+                exact
+                path='/checkout'
+                element={<Checkout />}
               />
               <Route
                 path='*'
