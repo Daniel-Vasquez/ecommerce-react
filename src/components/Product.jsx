@@ -30,7 +30,7 @@ export const Product = ({ products, checkProductInCart, removeFromCart, addToCar
             </Link>
 
             <p className="">
-              {formatCurrency(name.length * status.length) || 0}
+              {formatCurrency(name?.length * status?.length) || 0}
             </p>
 
             <div className="flex justify-center items-center gap-3">

@@ -14,7 +14,7 @@ export const Home = () => {
         <img
           src={bannerRickAndMorty}
           alt="Rick and Morty"
-          className="w-full h-96 object-cover rounded-xl"
+          className="w-full h-96 object-cover rounded-xl my-5"
         />
         <h1 className="absolute top-11 right-5 text-lg text-golden font-black md:text-6xl">
           Tarjetas de Rick and Morty
