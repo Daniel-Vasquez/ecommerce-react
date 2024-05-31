@@ -1,8 +1,10 @@
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button, Typography, Checkbox } from 'antd';
 import { LockOutlined } from '@ant-design/icons';
 import { Loading } from '@/components/Loading';
 
 export const LoginForm = ({ handleLogin, loadingLogin }) => {
+  const { Text } = Typography;
+
   const BUTTONSTYLE = {
     display: 'flex',
     justifyContent: 'center',
@@ -39,7 +41,19 @@ export const LoginForm = ({ handleLogin, loadingLogin }) => {
         />
       </Form.Item>
 
-      <Form.Item style={{ marginTop: '1rem', textAlign: 'center'}}>
+      <div style={{ textAlign: 'center', fontWeight: '600' }}>
+        Utiliza cualquier{" "}
+        <Text strong underline style={{ color: '#fbbf24' }}>
+          correo
+        </Text>{" "}
+        y{" "}
+        <Text strong underline style={{ color: '#fbbf24' }}>
+          contreseña
+        </Text>{" "}
+        para iniciar sesión.
+      </div>
+
+      <Form.Item style={{ marginTop: '1rem', textAlign: 'center' }}>
         <Button
           type="primary"
           size="large"
